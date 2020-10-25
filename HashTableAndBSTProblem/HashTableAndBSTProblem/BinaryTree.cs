@@ -17,8 +17,8 @@ namespace HashTableAndBSTProblem
         public BinaryTree<T> leftTree { get; set; }
         // Right Order Tree storing the element greater than the node data
         public BinaryTree<T> rightTree { get; set; }
-        public int leftCount;
-        public int rightCount;
+        public int leftCount = 0;
+        public int rightCount = 0;
         //Primary Parameterised Constructor to mark the formation of a new binary tree
         public BinaryTree(T nodeData)
         {
@@ -82,7 +82,8 @@ namespace HashTableAndBSTProblem
         /// </summary>
         public void GetSize()
         {
-            Console.WriteLine("Size" + " " + (1 + this.leftCount + this.rightCount));
+            Console.WriteLine("Left Count Size = " + this.leftCount);
+            Console.WriteLine("Right Count Size = "  + this.rightCount);
         }
     }
 }
