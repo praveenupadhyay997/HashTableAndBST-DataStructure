@@ -107,31 +107,40 @@ namespace HashTableAndBSTProblem
         }
         static void Main(string[] args)
         {
-            Console.WriteLine("=====================================");
-            Console.WriteLine("Welcome to the Hash-Table Replication");
-            Console.WriteLine("=====================================");
+            //Console.WriteLine("=====================================");
+            //Console.WriteLine("Welcome to the Hash-Table Replication");
+            //Console.WriteLine("=====================================");
 
-            //Adding the value at a designated key value pair
-            Console.WriteLine("Adding KeyValue pair");
-            mapNode.Add("0", "To");
-            mapNode.Add("1", "be");
-            mapNode.Add("2", "or");
-            mapNode.Add("3", "not");
-            mapNode.Add("4", "to");
-            mapNode.Add("5", "be");
-            //Calling the function to get the frequency of the words present in the hash map
-            //Performing not more than a traversal operation on the kay value struct
-            GetFrequency();
-            Console.ReadLine();
-            Console.Clear();
-            Console.WriteLine("=====================================");
-            Console.WriteLine("Frequency of word for  long  sentence");
-            Console.WriteLine("=====================================");
-            GetFrequencyOfLongSentence();
-            Console.ReadLine();
-            Console.Clear();
-            //Passing the word paranoid to get it removed
-            DeleteAvoidableWord("paranoid");
+            ////Adding the value at a designated key value pair
+            //Console.WriteLine("Adding KeyValue pair");
+            //mapNode.Add("0", "To");
+            //mapNode.Add("1", "be");
+            //mapNode.Add("2", "or");
+            //mapNode.Add("3", "not");
+            //mapNode.Add("4", "to");
+            //mapNode.Add("5", "be");
+            ////Calling the function to get the frequency of the words present in the hash map
+            ////Performing not more than a traversal operation on the kay value struct
+            //GetFrequency();
+            //Console.ReadLine();
+            //Console.Clear();
+            //Console.WriteLine("=====================================");
+            //Console.WriteLine("Frequency of word for  long  sentence");
+            //Console.WriteLine("=====================================");
+            //GetFrequencyOfLongSentence();
+            //Console.ReadLine();
+            //Console.Clear();
+            ////Passing the word paranoid to get it removed
+            //DeleteAvoidableWord("paranoid");
+            //Console.ReadLine();
+            //Console.Clear();
+            Console.WriteLine("======================================");
+            Console.WriteLine("Welcome to the Binary-Tree Replication");
+            Console.WriteLine("======================================");
+            BinaryTree<int> binaryTree = new BinaryTree<int>(56);
+            binaryTree.Insert(30);
+            binaryTree.Insert(70);
+            binaryTree.Display();
         }
     }
 }
