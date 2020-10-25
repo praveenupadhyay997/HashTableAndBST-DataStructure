@@ -15,6 +15,9 @@ namespace HashTableAndBSTProblem
         public static HashTableMap<string, string> mapNode = new HashTableMap<string, string>(5);
         //Declaring an instance of the hash table class with size five equivalent to number of words in the sentence
         public static HashTableMap<string, string> mapNodeForLongSentence = new HashTableMap<string, string>(18);
+        //The sentence words as array
+        public static string[] sentence = {"Paranoids", "are", "not", "paranoid", "because", "they", "are", "paranoid", "but", "because", "they" +
+                              "keep", "putting", "themselves", "deliberately", "into", "paranoid", "avoidable", "situations" };
         public static void GetFrequency()
         {
             //String array storing all the key in the hash table
@@ -46,8 +49,6 @@ namespace HashTableAndBSTProblem
         /// </summary>
         public static void GetFrequencyOfLongSentence()
         {   
-            string []sentence = {"Paranoids", "are", "not", "paranoid", "because", "they", "are", "paranoid", "but", "because", "they" +
-                              "keep", "putting", "themselves", "deliberately", "into", "paranoid", "avoidable", "situations" };
             List<string> keyValue=new List<string> { "0" };
             int sizeCount = sentence.Count();
             Console.WriteLine(sizeCount);
@@ -82,6 +83,28 @@ namespace HashTableAndBSTProblem
                 Console.WriteLine("Frequency of {0} is {1}", values, count);
             }
         }
+        /// <summary>
+        /// UC3- Delete the avoidable words in the long sentence
+        /// </summary>
+        /// <param name="wordToDelete"></param>
+        public static void DeleteAvoidableWord(string wordToDelete)
+        {
+            List<string> keyValue=new List<string> { "0" };
+            //Creating a list of keys as well
+            for (int i = 0; i < sentence.Count(); i++)
+            {
+                if (i != 0)
+                    keyValue.Add(Convert.ToString(i));
+            }
+            foreach (var value in keyValue)
+            {
+                //Condition to match the hash set dvalue with the removable value
+                //Calling the remove method and passing the key to remove the word from the sentence
+                if (wordToDelete == mapNodeForLongSentence.Get(value))
+                    mapNodeForLongSentence.Remove(value);
+            }
+            mapNodeForLongSentence.Display();
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("=====================================");
@@ -105,6 +128,10 @@ namespace HashTableAndBSTProblem
             Console.WriteLine("Frequency of word for  long  sentence");
             Console.WriteLine("=====================================");
             GetFrequencyOfLongSentence();
+            Console.ReadLine();
+            Console.Clear();
+            //Passing the word paranoid to get it removed
+            DeleteAvoidableWord("paranoid");
         }
     }
 }
